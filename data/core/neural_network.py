@@ -14,7 +14,6 @@ def rec_feedforward(inputs, layers):
 
 def sigmoid(x):
     # Наша функция активации: f(x) = 1 / (1 + e^(-x))
-    print(1 / (1 + np.exp(-x)))
     return 1 / (1 + np.exp(-x))
 
 
@@ -43,7 +42,7 @@ class NeuralNetwork:
                     else:
                         self.layer = np.append(self.layer, Neuron(1))
                 self.layers = np.append(self.layers, self.layer)
-            self.layers = self.layers.reshape(6, 5)
+            self.layers = self.layers.reshape(size[0], size[1])
         else:
             self.layers = descendant
 
@@ -60,4 +59,4 @@ class NeuralNetwork:
 
 
 nn = NeuralNetwork()
-print(nn.feedforward([0.1561665, 0.89410000, 0.15678, 0.5372745, 0.968568]))
+print(nn.feedforward([5000, 0.89410000, 0.15678, 0.5372745, 0.968568]))
